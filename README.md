@@ -73,4 +73,4 @@ The goal of this repository is to demonstrate practical experience across multip
 
 ## 👥 Authors
 
-Developed as part of a group project at RWTH Aachen University.
+Developed as part of a group project at RWTH Aachen University. Each team member independently approached and solved all tasks, followed by joint discussions to compare solutions and agree on a final consolidated approach.
