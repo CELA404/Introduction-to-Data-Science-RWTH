@@ -1,2 +1,151 @@
-# Introduction-to-Data-Science-RWTH
-Introduction to Data Science Assignments
+# Medical Insurance Data Analysis – RWTH Aachen
+
+This project was developed as part of the *Introduction to Data Science* course at RWTH Aachen University.
+
+It focuses on analyzing a real-world medical insurance dataset and applying a wide range of data science and machine learning techniques, including exploratory data analysis, classification, clustering, regression, and neural networks.
+
+---
+
+## 📊 Dataset
+
+The dataset contains demographic and medical information about individuals, including:
+
+- Age, sex, BMI
+- Number of children
+- Smoking status
+- Region
+- Medical insurance charges
+
+The goal is to analyze patterns in the data and build predictive models for insurance cost categories.
+
+---
+
+## 🔍 1. Exploratory Data Analysis (EDA)
+
+- Loaded and analyzed dataset structure and basic statistics
+- Identified missing values and created cleaned datasets
+- Engineered new features (e.g., BMI categories)
+- Visualized:
+  - distributions (histograms, boxplots)
+  - relationships (scatter plot matrices)
+- Computed correlations between numerical features
+- Analyzed patterns such as:
+  - impact of smoking on medical charges
+  - relationship between BMI and costs
+
+**Key Insight:**  
+Smoking status and BMI strongly influence insurance costs, with clear separations visible in distributions and correlations.
+
+---
+
+## 🌳 2. Decision Trees (Classification)
+
+- Built baseline models:
+  - constant prediction model
+  - mode-based classifier
+- Trained decision tree classifiers using scikit-learn
+- Tuned tree depth (max_depth) and evaluated performance
+- Visualized decision trees and interpreted splits
+- Predicted cost categories based on patient features
+
+**Key Insight:**  
+Tree depth significantly affects model performance, with shallow trees offering interpretability and deeper trees improving accuracy.
+
+---
+
+## 🔵 3. Clustering (K-Means)
+
+- Applied K-Means clustering on numerical features:
+  - age, BMI, children, charges
+- Standardized data before clustering
+- Computed:
+  - cluster centroids
+  - cluster sizes
+- Analyzed distribution of smokers vs non-smokers per cluster
+- Visualized clusters using pairplots
+
+**Key Insight:**  
+Clusters reveal distinct patient groups, often separating high-cost individuals (e.g., smokers) from lower-cost populations.
+
+---
+
+## 📈 4. Regression (Predicting Charges)
+
+- Explored linear relationship between age and charges
+- Built linear regression model using multiple features
+- Evaluated performance using Mean Absolute Error (MAE)
+- Compared training vs test performance
+
+**Key Insight:**  
+Single-feature models are insufficient; combining multiple features significantly improves prediction accuracy.
+
+---
+
+## ⚡ 5. Support Vector Machines (SVM)
+
+- Formulated binary classification problem:
+  - predicting high-cost patients
+- Trained SVM models:
+  - using limited features
+  - using full feature set
+- Evaluated:
+  - confusion matrices
+  - accuracy and precision
+- Applied feature scaling (StandardScaler)
+- Studied effect of regularization parameter (C)
+
+**Key Insight:**  
+Feature scaling has a major impact on SVM performance; normalized data significantly improves results.
+
+---
+
+## 🧠 6. Neural Networks & Naïve Bayes
+
+### Neural Networks (MLP)
+- Built multi-layer perceptron (MLP) model
+- Analyzed:
+  - accuracy
+  - confusion matrix
+  - prediction probabilities
+- Improved model through preprocessing and tuning
+
+### Naïve Bayes
+- Trained Gaussian Naïve Bayes classifier
+- Compared performance:
+  - with and without standardization
+
+**Key Insight:**  
+Neural networks require careful tuning and preprocessing, while simpler models like Naïve Bayes provide fast baseline performance.
+
+---
+
+## 🛠️ Technologies Used
+
+- Python (pandas, numpy)
+- scikit-learn
+- seaborn / matplotlib
+- Jupyter Notebooks
+
+---
+
+## 🔧 Limitations & Improvements
+
+- Limited hyperparameter tuning for models
+- Some models may be sensitive to preprocessing choices
+- Additional feature engineering could improve performance
+- More robust validation (e.g., cross-validation) could be applied
+
+---
+
+## 🚀 Future Work
+
+- Apply advanced models (e.g., ensemble methods)
+- Perform systematic hyperparameter optimization
+- Explore nonlinear relationships more deeply
+- Improve interpretability with feature importance analysis
+
+---
+
+## 👥 Authors
+
+Developed as part of a group project at RWTH Aachen University.
