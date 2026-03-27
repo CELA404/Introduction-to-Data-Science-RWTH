@@ -1,0 +1,149 @@
+# Advanced Data Science Applications – RWTH Aachen
+
+This repository contains the second part of a comprehensive data science project developed as part of the *Introduction to Data Science* course at RWTH Aachen University.
+
+The project covers multiple real-world datasets and spans a wide range of data science topics, including association rule mining, process mining, natural language processing, time series forecasting, and distributed data processing.
+
+---
+
+## 📊 Project Structure
+
+### 1. Market Basket Analysis
+
+Performed analysis on large-scale grocery transaction data (~573k rows, ~65k orders):
+
+- Computed product support statistics (mean, median, thresholds)
+- Identified top-10 most frequent products and analyzed co-occurrence patterns
+- Analyzed frequent itemsets using FP-Growth
+- Explored category-level purchasing behavior with visualizations
+- Generated and evaluated association rules (support, confidence, lift)
+- Compared rules involving high-frequency vs low-frequency products
+- Analyzed bidirectional association rules and sequence patterns
+- Provided theoretical justification for constraints on support, confidence, and lift
+
+**Key Insight:**  
+High-frequency items dominate association rules, while rare item combinations produce higher lift due to low base probabilities.
+
+---
+
+### 2. Process Mining
+
+Analyzed a real-world event log of a fine management process (~267k events):
+
+- Discovered process models using the Inductive Miner (Petri nets)
+- Identified:
+  - possible start activities
+  - required execution paths
+  - loops and optional behaviors
+- Quantified frequency of specific process behaviors (e.g., payment before collection)
+- Analyzed process variants and cumulative coverage
+- Visualized distribution of case outcomes (paid, dismissed, collection, open)
+- Built simplified models based on most frequent variants
+- Compared full vs filtered process models
+- Evaluated model quality using token-based replay:
+  - log fitness
+  - perfectly fitting traces
+
+**Key Insight:**  
+A small number of process variants explains the majority of cases, while rare behaviors significantly increase model complexity.
+
+---
+
+### 3. Natural Language Processing (NLP)
+
+Analyzed lecture transcripts (~1,700 segments):
+
+- Performed basic word frequency analysis and identified preprocessing issues
+- Applied text preprocessing:
+  - tokenization (NLTK)
+  - stopword removal
+  - normalization
+- Compared token distributions across lectures
+- Implemented an n-gram language model:
+  - generated text using n ∈ {2,3,4,5}
+  - analyzed impact of context size on coherence
+- Built a hierarchical TF-IDF retrieval system:
+  - lecture-level ranking
+  - timestamp-level retrieval
+- Evaluated retrieval performance on example queries
+
+**Key Insight:**  
+Increasing n in n-grams improves coherence but leads to sparsity issues; TF-IDF effectively retrieves semantically relevant lecture segments.
+
+---
+
+### 4. Time Series Analysis & Forecasting
+
+Analyzed historical flight data (2003–2023):
+
+- Explored trends and seasonality in flight and passenger data
+- Identified strong yearly seasonal patterns and COVID-19 disruption
+- Compared passenger vs flight trends (correlation analysis)
+- Applied:
+  - autocorrelation analysis (ACF)
+  - differencing
+  - STL decomposition
+- Evaluated stationarity using statistical tests
+- Built forecasting models:
+  - Naive forecaster
+  - ARIMA (parameter tuning)
+- Compared models using:
+  - RMSE
+  - MAE
+  - MAPE
+
+**Key Insight:**  
+The time series exhibits strong seasonality and structural breaks; simple ARIMA improves over naive baselines but struggles with sudden disruptions.
+
+---
+
+### 5. Distributed Data Processing (Apache Spark)
+
+Processed large-scale event logs using MapReduce and Spark:
+
+- Designed MapReduce pipeline for Directly-Follows Graph (DFG):
+  - grouping events by case
+  - extracting ordered activity sequences
+  - computing transition frequencies
+- Implemented DFG computation in PySpark using:
+  - `map`, `flatMap`, `groupByKey`, `reduceByKey`
+- Filtered low-frequency transitions to simplify process models
+- Extracted most frequent resource per activity
+- Generated and visualized process graphs
+
+**Key Insight:**  
+Distributed processing enables scalable process mining, while filtering improves interpretability without losing dominant behavior.
+
+---
+
+## 🛠️ Technologies Used
+
+- Python (pandas, numpy)
+- scikit-learn
+- NLTK (NLP)
+- seaborn / matplotlib
+- pm4py (process mining)
+- Apache Spark (PySpark)
+- statsmodels / sktime (time series)
+
+---
+
+## 🔧 Limitations & Improvements
+
+- Some models were not fully optimized due to time constraints
+- Hyperparameter tuning could improve predictive performance
+- NLP models are limited by dataset size (sparsity in higher n-grams)
+- Time series forecasting is affected by external shocks (e.g., COVID-19)
+- Process models could be further refined using noise filtering techniques
+
+---
+
+## 🚀 Future Work
+
+- Apply advanced models (e.g., LSTM for time series)
+- Improve NLP models with embeddings (e.g., Word2Vec, BERT)
+- Extend process mining with conformance checking techniques
+- Optimize Spark pipelines for larger datasets
+- Perform more extensive model validation
+
+---
