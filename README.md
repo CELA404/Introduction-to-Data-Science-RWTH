@@ -1,6 +1,14 @@
 # Data Science Projects – RWTH Aachen
 
 This repository contains a comprehensive collection of data science projects developed as part of the *Introduction to Data Science* course at RWTH Aachen University.
+##  Highlights
+
+- Built end-to-end data science workflows across multiple domains
+- Applied machine learning models (Decision Trees, SVM, Neural Networks)
+- Implemented NLP pipelines (n-grams, TF-IDF retrieval)
+- Developed time series forecasting models (ARIMA)
+- Performed process mining on large-scale event logs
+- Worked with distributed data processing (Apache Spark)
 
 ---
 
